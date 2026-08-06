@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>R0T0'S DOS GAME LIBRARY v1.37</title>
+
+<!-- Website Tab Icon -->
+<link rel="icon" type="image/png" href="favicon.png">
+
+<link rel="stylesheet" href="style.css">
+
+<!-- js-dos -->
+<link rel="stylesheet" href="js-dos/js-dos.css">
+
+</head>
+
+
+<body>
+
+
+<!-- CRT EFFECT -->
+
+<div id="crt"></div>
+
+
+
+<!-- =====================================================
+     DOS LOGIN SCREEN
+===================================================== -->
+
+<div id="loginScreen">
+
+
+<div id="loginBox">
+
+
+<pre id="loginText">
+
+R0T0 DOS GAME LIBRARY SECURITY
+--------------------------------
+
+SYSTEM LOCKED
+
+</pre>
+
+
+<div id="loginPrompt"></div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<!-- =====================================================
+     BIOS BOOT SCREEN
+===================================================== -->
+
+<div id="bootScreen">
+
+<pre id="bootText"></pre>
+
+</div>
+
+
+
+
+<!-- =====================================================
+     GAME LIBRARY
+===================================================== -->
+
+<div id="library">
+
+
+
+<div id="topBar">
+
+
+<div id="logo">
+
+R0T0'S DOS GAME LIBRARY v1.37
+
+</div>
+
+
+<div id="systemInfo">
+
+C:\GAMES
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div id="main">
+
+
+
+
+
+
+<!-- =====================================================
+     TERMINAL
+===================================================== -->
+
+
+<div id="leftPanel">
+
+
+<div id="terminal">
+
+
+<pre id="terminalText"></pre>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- =====================================================
+     GAME INFORMATION
+===================================================== -->
+
+
+<div id="rightPanel">
+
+
+
+<div id="gameWindowHeader">
+
+
+<span>
+
+GAME INFORMATION
+
+</span>
+
+
+<button id="closeGame" class="hidden">
+
+X
+
+</button>
+
+
+</div>
+
+
+
+
+
+<h1 id="gameTitle">
+
+NO GAME SELECTED
+
+</h1>
+
+
+
+<div class="divider"></div>
+
+
+
+
+
+<p id="developer">
+
+<b>Status</b><br>
+
+WAITING FOR COMMAND
+
+</p>
+
+
+
+
+
+<p id="release">
+
+<b>System</b><br>
+
+DOS GAME LIBRARY
+
+</p>
+
+
+
+
+
+<p id="engine">
+
+<b>Games Installed</b><br>
+
+1
+
+</p>
+
+
+
+
+
+<p id="status">
+
+<b>Status</b><br>
+
+NO SELECTION
+
+</p>
+
+
+
+
+
+<p id="executable">
+
+<b>Executable</b><br>
+
+NONE
+
+</p>
+
+
+
+
+
+<div class="divider"></div>
+
+
+
+
+
+<p id="description">
+
+Select a game from the terminal.
+
+<br><br>
+
+Type the full game name and press ENTER.
+
+</p>
+
+
+
+
+
+
+<button id="launchButton">
+
+► LAUNCH GAME
+
+</button>
+
+
+
+
+
+
+<!-- js-dos game screen -->
+
+<div id="dosContainer"></div>
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- =====================================================
+     STATUS BAR
+===================================================== -->
+
+
+<div id="bottomBar">
+
+
+<div>
+
+Installed Games:
+
+<b id="installedCount">1</b>
+
+</div>
+
+
+
+<div>
+
+DOS Version 6.22
+
+</div>
+
+
+
+<div>
+
+Ready.
+
+</div>
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- =====================================================
+     AUDIO
+===================================================== -->
+
+
+<audio id="keyboard" src="sounds/typing.mp3" preload="auto"></audio>
+
+<audio id="startup" src="sounds/startup.mp3" preload="auto"></audio>
+
+
+
+
+
+
+
+<!-- js-dos -->
+
+<script src="js-dos/js-dos.js"></script>
+
+
+<!-- Main script -->
+
+<script src="script.js"></script>
+
+
+
+</body>
+
+</html>

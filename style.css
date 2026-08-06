@@ -1,0 +1,1102 @@
+/* ======================================================
+   GLOBAL
+====================================================== */
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+
+html,
+body{
+
+    width:100%;
+    height:100%;
+
+    background:#000;
+
+    color:#00ff55;
+
+    font-family:"Courier New", monospace;
+
+    overflow:hidden;
+
+}
+
+
+body{
+
+    text-shadow:
+
+    0 0 4px #00ff55,
+
+    0 0 10px #00ff55;
+
+}
+
+
+
+
+
+/* ======================================================
+   CRT EFFECT
+====================================================== */
+
+
+#crt{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:9999;
+
+
+    background:
+
+    repeating-linear-gradient(
+
+        to bottom,
+
+        rgba(255,255,255,.05) 0px,
+
+        rgba(255,255,255,.05) 2px,
+
+        transparent 3px,
+
+        transparent 5px
+
+    );
+
+
+    animation:flicker .12s infinite;
+
+}
+
+
+
+
+
+/* ======================================================
+   BIOS BOOT
+====================================================== */
+
+
+#bootScreen{
+
+    position:absolute;
+
+    inset:0;
+
+    background:#000;
+
+    padding:35px;
+
+}
+
+
+
+#bootText{
+
+    white-space:pre-wrap;
+
+    font-size:20px;
+
+    line-height:1.5;
+
+}
+
+
+
+
+
+/* ======================================================
+   LIBRARY
+====================================================== */
+
+
+#library{
+
+    display:none;
+
+    width:100%;
+
+    height:100%;
+
+    flex-direction:column;
+
+}
+
+
+
+
+
+/* ======================================================
+   TOP BAR
+====================================================== */
+
+
+#topBar{
+
+
+    height:60px;
+
+
+    border-bottom:
+
+    2px solid #00ff55;
+
+
+    display:flex;
+
+
+    justify-content:space-between;
+
+
+    align-items:center;
+
+
+    padding:0 25px;
+
+
+    font-size:22px;
+
+
+}
+
+
+
+
+
+/* ======================================================
+   MAIN
+====================================================== */
+
+
+#main{
+
+    flex:1;
+
+    display:flex;
+
+}
+
+
+
+
+
+/* ======================================================
+   TERMINAL PANEL
+====================================================== */
+
+
+#leftPanel{
+
+
+    width:40%;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    border-right:
+
+    2px solid #00ff55;
+
+
+}
+
+
+
+
+
+#terminal{
+
+
+    width:90%;
+
+
+    height:80%;
+
+
+    border:
+
+    3px solid #00ff55;
+
+
+    padding:20px;
+
+
+    box-shadow:
+
+
+    0 0 20px #00ff55,
+
+
+    inset 0 0 15px #00ff55;
+
+
+    overflow:hidden;
+
+
+    font-size:20px;
+
+
+}
+
+
+
+
+
+#terminalText{
+
+
+    white-space:pre-wrap;
+
+
+    line-height:1.5;
+
+
+    margin:0;
+
+
+    padding:0;
+
+
+}
+
+
+
+
+
+/* Cursor */
+
+
+#cursor{
+
+
+    display:inline-block;
+
+
+    width:12px;
+
+
+    height:22px;
+
+
+    background:#00ff55;
+
+
+    vertical-align:middle;
+
+
+    animation:cursorBlink .8s infinite;
+
+
+}
+
+
+
+@keyframes cursorBlink{
+
+
+    0%{
+
+        opacity:1;
+
+    }
+
+
+    50%{
+
+        opacity:0;
+
+    }
+
+
+    100%{
+
+        opacity:1;
+
+    }
+
+}
+
+
+
+
+
+/* ======================================================
+   GAME INFORMATION WINDOW
+====================================================== */
+
+
+#rightPanel{
+
+
+    flex:1;
+
+
+    margin:30px;
+
+
+    border:
+
+    3px solid #00ff55;
+
+
+    box-shadow:
+
+
+    0 0 20px #00ff55;
+
+
+    padding:25px;
+
+
+    overflow:auto;
+
+
+}
+
+
+
+
+
+#gameWindowHeader{
+
+
+    height:32px;
+
+
+    border-bottom:
+
+    2px solid #00ff55;
+
+
+    display:flex;
+
+
+    justify-content:space-between;
+
+
+    align-items:flex-start;
+
+
+    margin-bottom:30px;
+
+
+    font-size:20px;
+
+
+}
+
+
+
+
+
+/* ======================================================
+   CLOSE X BUTTON
+====================================================== */
+
+
+#closeGame{
+
+
+    width:28px;
+
+
+    height:28px;
+
+
+    background:#000;
+
+
+    color:#00ff55;
+
+
+    border:
+
+    2px solid #00ff55;
+
+
+    font-family:"Courier New", monospace;
+
+
+    font-size:18px;
+
+
+    font-weight:bold;
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+    cursor:pointer;
+
+
+    transform:translateY(-6px);
+
+
+    box-shadow:
+
+
+    0 0 8px #00ff55;
+
+
+}
+
+
+
+#closeGame.hidden{
+
+
+    display:none;
+
+}
+
+
+
+#closeGame:hover{
+
+
+    background:#00ff55;
+
+
+    color:#000;
+
+
+    box-shadow:
+
+
+    0 0 15px #00ff55;
+
+
+}
+
+
+
+#closeGame:active{
+
+
+    transform:
+
+    translateY(-6px)
+
+    scale(.9);
+
+
+}
+
+
+
+
+
+/* ======================================================
+   GAME TEXT
+====================================================== */
+
+
+#rightPanel h1{
+
+
+    font-size:42px;
+
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+
+
+#rightPanel p{
+
+
+    font-size:18px;
+
+
+    line-height:1.6;
+
+
+    margin-bottom:18px;
+
+
+}
+
+
+
+
+
+.divider{
+
+
+    height:2px;
+
+
+    background:#00ff55;
+
+
+    margin:20px 0;
+
+
+}
+
+
+
+
+
+/* ======================================================
+   LAUNCH BUTTON
+====================================================== */
+
+
+#launchButton{
+
+
+    margin-top:25px;
+
+
+    width:320px;
+
+
+    height:60px;
+
+
+    background:#000;
+
+
+    color:#00ff55;
+
+
+    border:
+
+    3px solid #00ff55;
+
+
+    font-family:"Courier New", monospace;
+
+
+    font-size:22px;
+
+
+    cursor:pointer;
+
+
+}
+
+
+
+#launchButton:hover{
+
+
+    background:#00ff55;
+
+
+    color:#000;
+
+
+    box-shadow:
+
+
+    0 0 25px #00ff55;
+
+
+}
+
+
+
+#launchButton:active{
+
+
+    transform:scale(.97);
+
+
+}
+
+
+
+
+
+/* ======================================================
+   JS-DOS GAME WINDOW
+====================================================== */
+
+
+#dosContainer{
+
+    width:90%;
+
+    max-width:720px;
+
+    height:450px;
+
+
+    margin:30px auto 0 auto;
+
+
+    border:
+
+    3px solid #00ff55;
+
+
+    box-shadow:
+
+
+    0 0 20px #00ff55;
+
+
+    display:none;
+
+
+    overflow:hidden;
+
+
+    background:#000;
+
+}
+
+
+
+
+
+/* js-dos internal wrapper */
+
+#dosContainer > div{
+
+    width:100% !important;
+
+    height:100% !important;
+
+}
+
+
+
+
+
+/* js-dos canvas */
+
+#dosContainer canvas{
+
+    width:100% !important;
+
+    height:100% !important;
+
+    object-fit:contain;
+
+}
+
+
+
+
+
+/* ======================================================
+   STATUS BAR
+====================================================== */
+
+
+#bottomBar{
+
+
+    height:45px;
+
+
+    border-top:
+
+    2px solid #00ff55;
+
+
+    display:flex;
+
+
+    justify-content:space-around;
+
+
+    align-items:center;
+
+
+    font-size:17px;
+
+
+}
+
+
+
+
+
+/* ======================================================
+   ANIMATIONS
+====================================================== */
+
+
+.fadeOut{
+
+    animation:fadeOut .8s forwards;
+
+}
+
+
+
+.fadeIn{
+
+    animation:fadeIn .8s forwards;
+
+}
+
+
+
+@keyframes fadeOut{
+
+
+    to{
+
+        opacity:0;
+
+    }
+
+}
+
+
+
+@keyframes fadeIn{
+
+
+    from{
+
+        opacity:0;
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+
+
+@keyframes flicker{
+
+
+    0%{
+
+        opacity:.95;
+
+    }
+
+
+    50%{
+
+        opacity:1;
+
+    }
+
+
+    100%{
+
+        opacity:.96;
+
+    }
+
+}
+
+
+
+
+
+/* ======================================================
+   SCROLLBAR
+====================================================== */
+
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+
+
+::-webkit-scrollbar-thumb{
+
+    background:#00ff55;
+
+}
+
+
+
+
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+
+@media(max-width:1000px){
+
+
+#main{
+
+    flex-direction:column;
+
+}
+
+
+
+#leftPanel{
+
+
+    width:100%;
+
+
+    height:45%;
+
+
+    border-right:none;
+
+
+    border-bottom:
+
+    2px solid #00ff55;
+
+
+}
+
+
+
+#rightPanel{
+
+
+    margin:15px;
+
+
+    padding:15px;
+
+
+}
+
+
+
+#terminal{
+
+
+    height:90%;
+
+
+    font-size:16px;
+
+
+}
+
+
+
+#launchButton{
+
+
+    width:100%;
+
+
+}
+
+
+
+#dosContainer{
+
+    height:300px;
+
+}
+
+
+}
+
+/* ======================================================
+   ACTIVE DOS GAME MODE
+====================================================== */
+
+
+#rightPanel.gameRunning{
+
+    padding:8px;
+
+}
+
+
+
+#rightPanel.gameRunning #gameWindowHeader{
+
+    margin-bottom:0;
+
+    border-bottom:none;
+
+}
+
+
+
+#rightPanel.gameRunning #gameWindowHeader span{
+
+    display:none;
+
+}
+
+
+
+#rightPanel.gameRunning #gameTitle,
+#rightPanel.gameRunning #developer,
+#rightPanel.gameRunning #release,
+#rightPanel.gameRunning #engine,
+#rightPanel.gameRunning #status,
+#rightPanel.gameRunning #executable,
+#rightPanel.gameRunning #description,
+#rightPanel.gameRunning #launchButton,
+#rightPanel.gameRunning .divider{
+
+    display:none;
+
+}
+
+
+
+#rightPanel.gameRunning #dosContainer{
+
+    display:block;
+
+    width:100%;
+
+    height:100%;
+
+    max-width:none;
+
+    margin:0;
+
+    border:3px solid #00ff55;
+
+}
+
+/* ======================================================
+   DOS LOGIN SCREEN
+====================================================== */
+
+
+#loginScreen {
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:#000;
+
+    color:#00ff55;
+
+    font-family:"Courier New", monospace;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+}
+
+
+
+#loginBox {
+
+    width:600px;
+
+    min-height:300px;
+
+    border:2px solid #00ff55;
+
+    padding:30px;
+
+    box-shadow:
+    0 0 15px #00ff55;
+
+}
+
+
+
+#loginText {
+
+    color:#00ff55;
+
+    font-size:22px;
+
+    line-height:1.5;
+
+    margin:0;
+
+}
+
+
+
+#loginPrompt {
+
+    margin-top:25px;
+
+    font-size:22px;
+
+    white-space:pre-line;
+
+}
+
+
+
+/* Blinking DOS cursor */
+
+#loginPrompt::after {
+
+    content:"_";
+
+    animation:blinkCursor 0.8s infinite;
+
+}
+
+
+
+@keyframes blinkCursor {
+
+
+    0%,50% {
+
+        opacity:1;
+
+    }
+
+
+    51%,100% {
+
+        opacity:0;
+
+    }
+
+}
