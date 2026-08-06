@@ -152,7 +152,7 @@ const games = {
 
         executable:"C:\\GAMES\\JAGGED\\JA.EXE",
 
-        zip:"./games/ja.zip",
+        zip:"https://github.com/R0T0-DEV/DOS-Library/releases/download/v1.0/ja.zip",
 
         description:
         "Classic turn-based tactical strategy game.\n\nHire mercenaries, liberate Meduna, and reclaim the island."
